@@ -1,0 +1,23 @@
+.image-preview {
+  max-width: 200px;
+  border: solid 2px #eee;
+  margin: 2em;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+h2 {
+  margin-top: 1em;
+}
+
+button {
+  margin: 1em 0;
+}
+
+mat-form-field {
+  width: 100%;
+}
+

@@ -1,0 +1,31 @@
+<h2>Upload Image</h2>
+<div>
+  <button mat-raised-button type="button" (click)="imgFileInput.click()">Add image</button>
+  <input #imgFileInput hidden type="file" color="primary" (change)="onFileSelected($event)" accept=".png" >
+</div>
+<div class="image-container">
+  <img class="image-preview" alt="Image preview" [src]="image" *ngIf="image" >
+</div>
+<div>
+ <mat-form-field>
+   <mat-label>title</mat-label>
+   <input [(ngModel)]="title" color="primary" matInput placeholder="Title" name="title">
+ </mat-form-field>
+</div>
+<div>
+  <label id="radio-group-label">Pick your option:</label>
+  <mat-radio-group aria-labelledby="radio-group-label" class="radio-group" color="primary" [(ngModel)]="option">
+    <mat-radio-button class="radio-button" *ngFor="let option of options" [value]="option">
+      {{option}}
+    </mat-radio-button>
+  </mat-radio-group>
+</div>
+<div>
+  <hr>
+  <button mat-raised-button color="accent" type="submit" (click)="onSubmit()" >Upload</button>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let message of messages">{{message}}</li>
+  </ul>
+</div>
